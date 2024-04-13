@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mxr1 {
+    margin-right: 6px;
+}
+
+.heading1 {
+    font-size: x-large;
+    background: linear-gradient(to right, #1C1678, #8576FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent;
+    /* Make the text transparent */
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.okphone {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.okphone .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #8576FF;
+    border-radius: 6px;
+}
+
+.navbar {
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: aliceblue; */
+    height: 4rem;
+}
+
+.flex_row li {
+    list-style: none;
+}
+
+.flex_row li a {
+    text-decoration: none;
+    padding: 1rem;
+    color: #8576FF;
+}
+
+
+.btn_empty {
+    background-color: white;
+    padding: 5px;
+    width: 6rem;
+    border: 2px solid #8576FF;
+    border-radius: 5px;
+    color: #8576FF;
+
+}
+
+.btn_fill {
+    background-color: #8576FF;
+    padding: 5px;
+    width: 6rem;
+    border: 2px solid #8576FF;
+    border-radius: 5px;
+    color: white;
+}
+
+.maincontainer {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 1rem;
+}
+
+.maincenter {
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    background: linear-gradient(to right, #1C1678, #8576FF, #7BC9FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    padding: 0px 0px 2rem 0px;
+}
+
+.introtext {
+    max-width: 42rem;
+    text-align: center;
+    color: #1C1678;
+}
+
+.centertext {
+    display: block;
+    text-align: center;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #1C1678, #8576FF, #7BC9FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    padding: 2rem 0rem;
+}
+
+.ib_column {
+    max-width: 60%;
+    display: inline-block;
+    margin: auto;
+    justify-content: center;
+}
+
+
+.bggradientlight {
+    background-image: linear-gradient(to right, #8676ff1b, #7bc8ff33);
+    padding: 0px 0px 2.6rem 0px;
+}
+
+.gridcards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 200px 200px; */
+    gap: 2.4rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    /* height: 200px; */
+    min-width: 300px;
+}
+
+.bgdarkbox {
+    background-color: #050327;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    color: white;
+    padding-bottom: 3rem;
+}
+
+.bgdarkbox h2 {
+    padding: 3rem 0rem;
+    font-size: 3.5rem;
+    font-weight: 400;
+    background: linear-gradient(to right, #aba5ff, #7BC9FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.imgleft {
+    height: 200px;
+    width: 200px;
+}
+
+.mw60 {
+    max-width: 60%;
+    flex-wrap: nowrap;
+}
+
+#divpadd {
+    padding: 2rem;
+}
+
+#divpadd h3 {
+    font-weight: 500;
+    font-size: 2rem;
+    background: linear-gradient(to right, #9b93ff, #47b2ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#divpadd p {
+    color: #a7a3dc;
+}
+
+.lrbox {
+    padding: 0rem 0px;
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+
+.lrbox div {
+    padding: 2rem 0rem;
+}
+
+.tfright {
+    text-align: right;
+    padding: 0rem 2rem 0px 0px;
+}
+
+.footer {
+    background-color: #050327;
+    color: #a7a3dc;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+}
+
+.tfleft {
+    text-align: left;
+    padding: 0rem 0px 0px 2rem;
+}
+
+.lrbox h2 {
+    margin-top: 2rem;
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+    display: block;
+    color: #1C1678;
+}
+
+.lrbox h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #1C1678;
+}
+
+
+@media (max-width: 800px) {
+
+    .gridcards {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 200px 200px; */
+        gap: 2.4rem;
+
+    }
+
+    .flex_row {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .bgdarkbox h2 {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .imgleft {
+        margin: auto;
+    }
+
+    .tfleft {
+        text-align: center;
+    }
+
+    .tfright {
+        text-align: center;
+    }
+
+    .flex_reverse_phone {
+        flex-flow: column-reverse;
+    }
+
+    .tfright {
+        padding: 0rem;
+    }
+
+    .tfleft {
+        padding: 0rem;
+    }
+
+    /* .okphone {
+            display: flex;
+        }
+    
+        .navbar {
+            display: flex;
+        }
+    
+        .fordesk {
+            display: none;
+        }
+    
+        .navbar h1 {
+            display: block;
+            width: 100%;
+            text-align: left;
+            justify-content: center;
+        }
+    
+        .navbar li {
+            width: 100%;
+        }
+    
+        .navbar ul {
+            flex-direction: column;
+            z-index: 100;
+        }
+    
+        .navbar span {
+            flex-direction: column;
+        } */
+    .okphone {
+        display: flex;
+    }
+
+    .navbar {
+        display: block;
+        margin: auto;
+    }
+
+    .navbar #ulnav{
+        display: none;
+        width: 100%;
+        margin: 0 auto ;
+        margin-top: 10rem;
+    }
+    .navbar #btn {
+        display: none;
+        width: 100%;
+        margin: auto;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+    #ulnav li {
+     padding: 4px 0px;   
+    }
+
+
+    /* .navbar #btn {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    } */
+
+}
