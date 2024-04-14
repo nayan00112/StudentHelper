@@ -71,3 +71,7 @@ def getbookdetails(request):
         "json_data": art,
     }
     return render(request, "blogs/getbookdetails.html", context)
+
+
+def time_management(request):
+        return render(request, "blogs/time_management.html")
