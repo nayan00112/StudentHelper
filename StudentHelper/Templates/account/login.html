@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'blogs.css'%}"> 
+<style>
+
+
+h1 {
+    background: linear-gradient(to right, #6b61ff, #4fb5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-size: x-large;
+}
+input{
+    width:100%;
+    padding: 0.8rem;
+    border: #6b61ff 2px solid;
+    border-radius: 5px;
+
+}
+label{
+    padding:10px 0px;
+}
+
+input[type="submit"]{
+    background-color: #6b61ff;
+    color: white;
+}
+.center{
+    text-align: center;
+    padding: 1rem;
+}
+.messages{
+    display: block;
+    background-color: rgb(255, 237, 203);
+    color: rgb(166, 97, 0);
+    padding:2px;
+    border-radius: 5px;
+}
+</style>
+{% endblock style %}
+{% block title %}Login | Student Helper{% endblock title %}
+{% block maincontent %}
+<div>
+    <h1>Login</h1>
+    {% if messages %}
+    <span class="messages">
+        {% for message in messages %}
+        <span class="center">
+            {{message}}
+        </span>
+        {% endfor %}
+    </span>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="uname">Username:</label><br>
+        <input type="text" id="uname" name="uname" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock maincontent %}
+
+

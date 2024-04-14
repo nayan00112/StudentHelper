@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Search Books || Student Helper{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs/articalscss.css'%}">
+<style>
+    #cont1 {
+        width: 60%;
+        margin: auto;
+        padding: 2rem;
+        line-height: 1.5rem;
+        border-color: #e9e9ef;
+    }
+
+    .parantbookcards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 2rem;
+
+    }
+
+    .bookcard {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 5px #6d62ff;
+        border: 0;
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+        width: 22%;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .bookinfo {
+        width: 100%;
+
+    }
+
+    .bookinfo p {
+        font-size: small;
+    }
+
+    .bookinfo h2 {
+        font-size: medium;
+        color: #6d62ff;
+
+        padding: 1rem 0px;
+    }
+
+    .btn_book1{
+        display: block;
+        padding: 10px;
+        margin: 5px 0px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: #6d62ff;
+        background-color: white;
+        border: 2px solid #6d62ff;
+        border-radius: 5px;
+    }
+    
+    .btn_book2{
+        display: block;
+        padding: 10px;
+        margin: 5px 0px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #6d62ff;
+        border: 2px solid #6d62ff;
+        border-radius: 5px;
+    }
+@media (max-width: 800px) {
+    #cont1{
+        width: 100%;
+    }
+    .bookcard{
+        width: 100%;
+    }
+}
+</style>
+{% endblock style %}
+{% block maincontent %}
+<div id="cont1">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="kw">Enter Keywords:</label>
+        <input type="text" id="kw" placeholder="Enter Keywords Ex. Maths" name="kw" required>
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+<h1 id="headertext">Books Information</h1>
+
+<div class="parantbookcards">
+    {% for item in json_data.items %}
+    <div class="bookcard">
+        <div>
+            <img src="{{ item.volumeInfo.imageLinks.thumbnail }}" alt="{{ item.volumeInfo.title }} Thumbnail"
+                width="180px">
+        </div>
+        <div class="bookinfo">
+            <h2>{{ item.volumeInfo.title }}</h2>
+            <p><strong>Author(s):</strong> {{ item.volumeInfo.authors|join:", " }}</p>
+            <p><strong>Publisher:</strong> {{ item.volumeInfo.publisher }}</p>
+            <p><strong>Published Date:</strong> {{ item.volumeInfo.publishedDate }}</p>
+            <p><strong>Categories:</strong> {{ item.volumeInfo.categories|join:", " }}</p>
+            <p><strong>Average Rating:</strong> {{ item.volumeInfo.averageRating }}</p>
+            <p><strong>Ratings Count:</strong> {{ item.volumeInfo.ratingsCount }}</p>
+            <p><strong>Page Count:</strong> {{ item.volumeInfo.pageCount }}</p>
+            <p><strong>Language:</strong> {{ item.volumeInfo.language }}</p>
+            <p><a href="{{ item.volumeInfo.previewLink }}" class="btn_book1">View Book</a></p>
+            <p><a href="{{ item.volumeInfo.infoLink }}" class="btn_book2">More Information</a></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock maincontent %}

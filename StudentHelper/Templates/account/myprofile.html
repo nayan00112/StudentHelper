@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs.css'%}">
+<style>
+    h1 {
+        background: linear-gradient(to right, #6b61ff, #4fb5ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        font-size: x-large;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem;
+        border: #6b61ff 2px solid;
+        border-radius: 5px;
+
+    }
+
+    label {
+        padding: 10px 0px;
+    }
+
+    input[type="submit"] {
+        background-color: #6b61ff;
+        color: white;
+    }
+
+    .center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .messages {
+        display: block;
+        background-color: rgb(255, 237, 203);
+        color: rgb(166, 97, 0);
+        padding: 2px;
+        border-radius: 5px;
+    }
+</style>
+{% endblock style %}
+{% block title %}User Profile | Student Helper{% endblock title %}
+
+{% block maincontent %}
+<div>
+    <h1>User Profile</h1>
+    {% if messages %}
+    <span class="messages">
+        {% for message in messages %}
+        <span class="center">
+            {{message}}
+        </span>
+        {% endfor %}
+    </span>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" value="{{user.first_name}}" required><br><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" value="{{user.last_name}}" required><br><br>
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value="{{user.username}}" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{user.email}}" required><br><br>
+
+        <label for="old_password">Current Password:</label><br>
+        <input type="password" id="old_password" name="old_password" required><br><br>
+
+        <label for="create_password">Create new Password:</label><br>
+        <input type="password" id="create_password" name="create_password" required><br><br>
+
+        <label for="conform_password">Confirm new Password:</label><br>
+        <input type="password" id="conform_password" name="conform_password" required><br><br>
+
+        <input type="submit" value="Update">
+    </form>
+    {% else %}
+    <p style="color:red;">Authentication Required</p>
+    {% endif %}
+</div>
+{% endblock maincontent %}

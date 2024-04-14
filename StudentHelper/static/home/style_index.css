@@ -8,7 +8,9 @@
 .mxr1 {
     margin-right: 6px;
 }
-
+.activenavbar{
+    text-decoration: underline;
+}
 .heading1 {
     font-size: x-large;
     background: linear-gradient(to right, #1C1678, #8576FF);
@@ -61,7 +63,10 @@
     padding: 1rem;
     color: #8576FF;
 }
-
+.flex_row a:hover{
+    background-color: #e4e0ff;
+    border-radius: 5px;
+}
 
 .btn_empty {
     background-color: white;
@@ -139,6 +144,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     /* grid-template-rows: 200px 200px; */
     gap: 2.4rem;
+    line-height: 1.6rem;
+}
+.gridcards h3{
+    background: linear-gradient(to right, #6b61ff, #4fb5ff);
+    padding: 2px 0px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
 }
 
 .card {
@@ -347,7 +361,7 @@
         flex-direction: column;
     }
     #ulnav li {
-     padding: 4px 0px;   
+     padding: 0.8rem 0px;   
     }
 
 

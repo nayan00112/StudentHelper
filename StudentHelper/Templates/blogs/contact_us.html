@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="{% static 'blogs.css'%}"> {% endblock style %}
+<link rel="stylesheet" href="{% static 'blogs.css'%}"> 
+<style>
+h1{
+        background: linear-gradient(to right, #6b61ff, #4fb5ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+{% endblock style %}
 {% block title %}FAQS | Student Helper {% endblock title %}
 
 
