@@ -1,36 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <link rel="stylesheet" href="{% static 'home/style_index.css' %}">
-    <script src="{% static 'home/nav.js' %}"></script>
-</head>
-<body>
-
-    <nav class="flex_row navbar">
-        <h1 class="heading1">Student Helper</h1>
-        <ul class="flex_row fordesk" id='ulnav'>
-            <li><a href="#">EduTalk Corner</a></li>
-            <li><a href="#">Tips</a></li>
-            <li><a href="#">Smart Tools</a></li>
-            <li><a href="#">Motivation</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-        <span class="flex_row fordesk" id="btn">
-            <button class="btn_empty mxr1">Sign in</button>
-            <button class="btn_fill">Sign up</button>
-        </span>
-        <a class="okphone" onclick="navclick()"> 
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-    </nav>
+{% block title %}Student Helper{% endblock title %}
+{% block maincontent %}
     <main class="maincontainer">
         <span class="maincenter">Student Helper</span>
         <p class="introtext">"Welcome to Student Helper! Your one-stop platform for all academic needs. Engage with fellow students, teachers, and experts to discuss, solve problems, and share resources. Join study groups and receive personalized guidance to enhance your learning journey. Dive into our vibrant community today and unlock your full potential!"</p>
@@ -41,7 +12,7 @@
             <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
             <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
             <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
-            <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
+            <div class="card"><h3>Read Articals You like!</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae facilis odit eaque?</p><p><a href="/blogs/articalsread" role="button">Click here</a></p></div>
             <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
             <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolore dolores ad, sunt repellendus eius aliquid exercitationem, pariatur commodi, nisi quos aperiam temporibus.</div>
         </div>
@@ -87,8 +58,4 @@
             <img class="imgleft" src="{% static 'home/i.jpeg' %}" alt="">
         </div>
     </div>
-    <footer class="footer">
-        <small>&copy; Copyright 2024, Student Helper </small>
-    </footer>
-</body>
-</html>
+    {% endblock maincontent %}

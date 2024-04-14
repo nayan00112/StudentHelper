@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Search Articals{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs/articalscss.css'%}"> {% endblock style %}
+{% block maincontent %}
+<div id="cont">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="kw">Enter Keywords:</label>
+        <input type="text" id="kw" placeholder="Enter Keywords Ex. Nature" name="kw" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1 id="headertext">Articals</h1>
+    <div class="outerbox">
+        {% for article in data.articles %}
+        <div class="innerbox">
+            <h4><b>Title:</b> <br>{{ article.title }}</h4>
+            <p><b>Author:</b> <br>{{ article.author }}</p>
+            <p><b>Description:</b> <br>{{ article.description }}</p>
+            <p><b>Published At:</b> <br>{{ article.publishedAt }}</p>
+            <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="imagewidth"><br>
+            <p><a href="{{ article.url }}">Read more</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock maincontent %}

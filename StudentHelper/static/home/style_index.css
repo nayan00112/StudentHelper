@@ -17,6 +17,7 @@
     /* Clip the gradient to the text */
     -webkit-text-fill-color: transparent;
     /* Make the text transparent */
+    text-decoration: none;
 }
 
 .flex_row {

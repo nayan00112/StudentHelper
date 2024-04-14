@@ -1,0 +1,30 @@
+h1{
+    font-size: x-large;
+    background: linear-gradient(to right, #1C1678, #8576FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+div{
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+    min-height: calc(100vh - 7rem);
+    line-height: 1.5rem;
+}
+div li{
+    font-weight: 500;
+    color: #1C1678;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+p{
+    padding: 1rem 0rem;
+}
+
+@media (max-width: 800px) {
+    div{
+        width: 95vw;
+    };
+}
