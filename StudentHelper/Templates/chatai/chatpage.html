@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs.css'%}">
+<style>
+    h1 {
+        background: linear-gradient(to right, #6b61ff, #4fb5ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        font-size: x-large;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem;
+        border: #6b61ff 2px solid;
+        border-radius: 5px;
+
+    }
+
+    label {
+        padding: 10px 0px;
+    }
+
+    input[type="submit"] {
+        background-color: #6b61ff;
+        color: white;
+    }
+
+    .center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .messages {
+        display: block;
+        background-color: rgb(224, 255, 230);
+        color: rgb(0, 140, 40);
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .formclass {
+        background-color: #f1f0ff;
+        z-index: 1000;
+        padding: 0.5rem;
+        border-radius: 5px;
+        position: sticky;
+        bottom: 1rem;
+        left: 0;
+        width: 100%;
+        
+    }
+</style>
+{% endblock style %}
+{% block title %}Chat AI | Student Helper{% endblock title %}
+{% block maincontent %}
+
+
+<div>
+    {% if request.user.is_authenticated %}
+
+    <h1>Chat With AI</h1>
+    <section>
+        {% for part in parts %}
+        <span>
+            <strong>{{ part.role }}:</strong> {{ part.parts }}
+            <br>
+        </span>
+        {% endfor %}
+       
+    
+    </section>
+    {% if messages %}
+    <span class="messages">
+        {% for message in messages %}
+        <span class="center">
+            {{message}}
+        </span>
+        {% endfor %}
+    </span>
+    {% endif %}
+    <form method="post" class="formclass">
+        {% csrf_token %}
+        
+        <input type="text" id="userchatmessage" name="userchatmessage" placeholder="enter message" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% else %}
+    <p style="font-size: x-large; color: red; text-align: center; padding: 2rem;">Login required</p>
+    {% endif %}
+</div>
+{% endblock maincontent %}

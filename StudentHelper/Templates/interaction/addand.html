@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs.css'%}">
+<style>
+    h1,
+    h2 {
+        background: linear-gradient(to right, #6b61ff, #4fb5ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        font-size: x-large;
+        padding: 1rem 0rem;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem;
+        border: #6b61ff 2px solid;
+        border-radius: 5px;
+
+    }
+
+    label {
+        padding: 10px 0px;
+    }
+
+    input[type="submit"] {
+        background-color: #6b61ff;
+        color: white;
+    }
+
+    .center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .messages {
+        display: block;
+        background-color: rgb(224, 255, 230);
+        color: rgb(0, 140, 40);
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+    span {
+        display: block;
+    }
+
+    small {
+        display: block;
+        color: #555;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    form {
+        margin-bottom: 2rem;
+    }
+
+    .box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #ebf3ff;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0px;
+        border-radius: 5px;
+
+    }
+
+    textarea {
+        width: 100%;
+        height: 8rem;
+    }
+</style>
+{% endblock style %}
+{% block title %}Login | Student Helper{% endblock title %}
+{% block maincontent %}
+
+
+<div>
+    {% if request.user.is_authenticated %}
+    <h1>Add Answer</h1>
+    <a href="/interaction/showque" style="padding-bottom: 1rem; color: #4fb5ff; ">Back to question list</a>
+    {% for q in qn %}
+    <h2>{{q.question}}</h2>
+    {% endfor %}
+
+    {% if messages %}
+    <span class="messages">
+        {% for message in messages %}
+        <span class="center">
+            {{message}}
+        </span>
+        {% endfor %}
+    </span>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="ans">Answere:</label><br>
+        <textarea type="text" id="ans" name="ans" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <section>
+        <h4>Answers from other:</h4>
+        {% for q in ansdata %}
+        <span class="box" onclick="window.location.href = '/interaction/dashbord/{{q.queuniqueid}}'">
+            <span>{{forloop.counter}}. {{q.ansstr}}</span>
+            <small>{{q.ansdate}}</small>
+        </span>
+        {% endfor %}
+    </section>
+    {% else %}
+    <p style="font-size: x-large; color: red; text-align: center; padding: 2rem;">Login required</p>
+    {% endif %}
+</div>
+{% endblock maincontent %}

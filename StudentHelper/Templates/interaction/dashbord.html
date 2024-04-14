@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'blogs.css'%}">
+<style>
+    h1 {
+        background: linear-gradient(to right, #6b61ff, #4fb5ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        font-size: x-large;
+    }
+
+    .center {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .messages {
+        display: block;
+        background-color: rgb(224, 255, 230);
+        color: rgb(0, 140, 40);
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+    span {
+        display: block;
+    }
+
+    small {
+        display: block;
+        color: #555;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #ebf3ff;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0px;
+        border-radius: 5px;
+
+    }
+</style>
+{% endblock style %}
+{% block title %}Dashbord | Student Helper{% endblock title %}
+{% block maincontent %}
+
+
+<div>
+    {% if request.user.is_authenticated %}
+
+    <h1>Question</h1>
+    {% if messages %}
+    <span class="messages">
+        {% for message in messages %}
+        <span class="center">
+            {{message}}
+        </span>
+        {% endfor %}
+    </span>
+    {% endif %}
+
+
+    <section>
+        {% for q in data %}
+        <span class="box" onclick="window.location.href = '/interaction/addans/{{q.id}}'">
+            <span>{{forloop.counter}}. {{q.question}}</span>
+            <small>{{q.queaddeddate}}</small>
+        </span>
+        {% endfor %}
+    </section>
+    {% else %}
+    <p style="font-size: x-large; color: red; text-align: center; padding: 2rem;">Login required</p>
+    {% endif %}
+</div>
+{% endblock maincontent %}

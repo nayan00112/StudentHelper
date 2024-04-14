@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ez30ds&%%@z93wf+r63l3)dpj65elw01dy3wyp+@rakowkg0w$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.54.57", "*"]
+ALLOWED_HOSTS = ["192.168.237.57", "*"]
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'home',
     "blogs",
     "account",
+    "interaction",
+    "chatai",
 ]
 
 MIDDLEWARE = [

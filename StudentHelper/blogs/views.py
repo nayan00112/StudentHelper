@@ -4,7 +4,8 @@ import json
 
 
 def ques(kw):
-    api = "your_api_key"
+    # api = "your_api_key"
+    api = "3e7626aae282444b87411b2d86eaa99d"
     # https://newsapi.org
     url = f'https://newsapi.org/v2/everything?q={kw}&apiKey={api}'
     response = requests.get(url)
