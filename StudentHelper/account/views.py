@@ -75,7 +75,7 @@ def myprofile(request):
                         user.save()
                         auth.logout(request)
                         messages.success(request, "Updated Successfully and logout.")
-                        return redirect("/")
+                        return redirect("/account/login")
             else:
                 messages.info(request, "Password is not matching...")
         return render(request, "account/myprofile.html")
