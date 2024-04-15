@@ -11,7 +11,8 @@ import google.generativeai as genai
 # Create your views here.
 
 def getchatresponsehistory(c):
-    GOOGLE_API_KEY = 'put_your_api'
+    # https://ai.google.dev/tutorials/quickstart
+    GOOGLE_API_KEY = 'your_api_key'
     genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel('gemini-pro')
     chat = model.start_chat(history=[])
