@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Time Management | Transpara{% endblock title %}
+{% load static %}
+
+{% block style %}
+<style>
+  h2,
+  h3,
+  h4,
+  strong {
+    background: linear-gradient(to right, #6b61ff, #4fb5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  li {
+    margin-left: 1cm;
+    padding: 2px;
+    margin-top: 2px;
+  }
+
+  .answer {
+    max-width: 20cm;
+    margin: auto;
+  }
+</style>
+{% endblock style %}
+
+{% block maincontent %}
+
+<br><br>
+
+<div class="answer" style="min-height:10cm ;">
+  <h2>Critical Thinking and Problem-Solving</h2>
+  <br>
+  <br>
+  <p><strong>Critical Thinking</strong></p>
+  <p>Critical thinking is a higher-order cognitive skill that involves the ability to analyze information, identify
+    patterns, evaluate arguments, and draw logical conclusions. It is a key component of problem-solving and
+    decision-making.</p>
+  <p><strong>Components of Critical Thinking:</strong></p>
+  <ul>
+    <li><strong>Analysis:</strong> Breaking down information into its parts to understand its structure and
+      relationships.</li>
+    <li><strong>Evaluation:</strong> Assessing the validity, reliability, and relevance of information.</li>
+    <li><strong>Synthesis:</strong> Combining different pieces of information to create new insights or ideas.</li>
+    <li><strong>Deduction:</strong> Drawing logical conclusions from general premises.</li>
+    <li><strong>Induction:</strong> Making generalizations based on specific observations.</li>
+  </ul>
+  <p><strong>Problem-Solving</strong></p>
+  <p>Problem-solving is the process of identifying, defining, and solving problems. It involves using critical
+    thinking skills to analyze the situation, generate solutions, and implement the best option.</p>
+  <p><strong>Steps in Problem-Solving:</strong></p>
+  <ul>
+    <li><strong>Identify the problem:</strong> Clearly define the issue to be addressed.</li>
+    <li><strong>Gather information:</strong> Collect data, facts, and perspectives related to the problem.</li>
+    <li><strong>Generate solutions:</strong> Brainstorm and explore multiple potential solutions.</li>
+    <li><strong>Evaluate solutions:</strong> Analyze the pros and cons of each solution, considering factors such as
+      feasibility, effectiveness, and cost.</li>
+    <li><strong>Select the best solution:</strong> Choose the solution that best meets the criteria and objectives.
+    </li>
+    <li><strong>Implement the solution:</strong> Put the selected solution into action and monitor its progress.
+    </li>
+    <li><strong>Evaluate the outcome:</strong> Assess the effectiveness of the solution and make adjustments if
+      needed.</li>
+  </ul>
+  <p><strong>Relationship between Critical Thinking and Problem-Solving</strong></p>
+  <p>Critical thinking and problem-solving are closely related and mutually supportive. Critical thinking provides
+    the analytical and logical reasoning skills necessary for problem-solving, while problem-solving offers
+    opportunities to apply and enhance critical thinking abilities.</p>
+  <p><strong>Benefits of Critical Thinking and Problem-Solving</strong></p>
+  <ul>
+    <li><strong>Improved decision-making:</strong> By critically analyzing information and evaluating options,
+      individuals can make more informed and thoughtful decisions.</li>
+    <li><strong>Enhanced creativity:</strong> Critical thinking encourages innovation and the generation of new
+      ideas by challenging assumptions and exploring different perspectives.</li>
+    <li><strong>Increased adaptability:</strong> Critical thinking and problem-solving skills enable individuals to
+      navigate complex and changing situations effectively.</li>
+    <li><strong>Strengthened communication:</strong> By analyzing and conveying information clearly, individuals can
+      communicate more effectively with others.</li>
+    <li><strong>Personal growth:</strong> Critical thinking and problem-solving foster intellectual curiosity,
+      lifelong learning, and self-confidence.</li>
+  </ul>
+</div>
+{% endblock maincontent %}

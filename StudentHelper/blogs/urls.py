@@ -8,4 +8,7 @@ urlpatterns = [
     path("articalsread/", views.articalsread, name="articalsread"),
     path("getbookdetails/", views.getbookdetails, name="getbookdetails"),
     path("time_management/", views.time_management, name="time_management"),
+    path("criticalthinking/", views.criticalthinking, name="criticalthinking"),
+    path("comminication/", views.comminication, name="comminication"),
+    path("Adaptability/", views.adaptability, name="Adaptability"),
 ]

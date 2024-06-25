@@ -75,3 +75,14 @@ def getbookdetails(request):
 
 def time_management(request):
         return render(request, "blogs/time_management.html")
+
+def criticalthinking(request):
+        return render(request, "blogs/criticalthinking.html")
+
+def comminication(request):
+        return render(request, "blogs/comminication.html")
+
+def adaptability(request):
+        return render(request, "blogs/Adaptability.html")
+
+
