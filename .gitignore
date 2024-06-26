@@ -2,3 +2,4 @@ env
 Frontend
 apikey.txt
 temp
+.env

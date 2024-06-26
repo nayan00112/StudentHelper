@@ -1,10 +1,10 @@
 from django.shortcuts import render
 import requests
 import json
-
+from decouple import config
 
 def ques(kw):
-    api = "your_api_key"
+    api = config("articalsapi")
     # https://newsapi.org
     url = f'https://newsapi.org/v2/everything?q={kw}&apiKey={api}'
     response = requests.get(url)

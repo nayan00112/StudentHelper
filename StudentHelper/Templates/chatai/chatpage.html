@@ -79,8 +79,10 @@
     .ai_msg {
         display: block;
         margin-right: auto;
-        padding: 6px;
-        width: 80%;
+        padding: 8px;
+        /* width: 80%; */
+        width: fit-content;
+        max-width: 80%;
         border-radius: 2px 1rem 1rem 1rem;
         background-color: #6b61ff;
         color: #eeedff;
@@ -89,13 +91,19 @@
 
     .my_msg {
         margin-left: auto;
-        padding: 6px;
+        padding: 8px;
         display: block;
-        width: 80%;
+        /* width: 80%; */
+        width: fit-content;
+        max-width: 80%;
         border-radius: 1rem 2px 1rem 1rem;
         background-color: #eeedff;
         color: #6b61ff;
         margin-bottom: 6px;
+    }
+
+    .ai_msg  a:link {
+        color: white;
     }
 </style>
 {% endblock style %}

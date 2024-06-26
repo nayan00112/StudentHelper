@@ -1,7 +1,8 @@
 import google.generativeai as genai
+from decouple import config
 
 # https://ai.google.dev/gemini-api/docs/api-key?authuser=1
-GOOGLE_API_KEY = "YOUR_API_KEY"
+GOOGLE_API_KEY = config("chatapi")
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
