@@ -97,11 +97,11 @@
 }
 
 .maincenter {
-    /* width: 100%; */
-    /* text-align: center; */
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    /* display: inline; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
 
     font-size: 5rem;
     background: linear-gradient(to right, #1C1678, #8576FF, #7BC9FF);
